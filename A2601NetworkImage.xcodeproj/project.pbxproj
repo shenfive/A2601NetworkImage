@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F8CA6DDD2F20BB4C0056A18F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F8CA6DDC2F20BB4C0056A18F /* Alamofire */; };
+		F8CA6DE02F20BBAE0056A18F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F8CA6DDF2F20BBAE0056A18F /* SwiftyJSON */; };
+		F8CA6DE32F20BC560056A18F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F8CA6DE22F20BC560056A18F /* SDWebImage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F8CA6DC32F20AD760056A18F /* A2601NetworkImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A2601NetworkImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8CA6DE32F20BC560056A18F /* SDWebImage in Frameworks */,
+				F8CA6DE02F20BBAE0056A18F /* SwiftyJSON in Frameworks */,
+				F8CA6DDD2F20BB4C0056A18F /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,9 @@
 			);
 			name = A2601NetworkImage;
 			packageProductDependencies = (
+				F8CA6DDC2F20BB4C0056A18F /* Alamofire */,
+				F8CA6DDF2F20BBAE0056A18F /* SwiftyJSON */,
+				F8CA6DE22F20BC560056A18F /* SDWebImage */,
 			);
 			productName = A2601NetworkImage;
 			productReference = F8CA6DC32F20AD760056A18F /* A2601NetworkImage.app */;
@@ -107,6 +119,11 @@
 			);
 			mainGroup = F8CA6DBA2F20AD760056A18F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F8CA6DDB2F20BB4C0056A18F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F8CA6DDE2F20BBAE0056A18F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F8CA6DE12F20BC560056A18F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F8CA6DC42F20AD760056A18F /* Products */;
 			projectDirPath = "";
@@ -345,6 +362,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8CA6DDB2F20BB4C0056A18F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.0;
+			};
+		};
+		F8CA6DDE2F20BBAE0056A18F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		F8CA6DE12F20BC560056A18F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8CA6DDC2F20BB4C0056A18F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8CA6DDB2F20BB4C0056A18F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F8CA6DDF2F20BBAE0056A18F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8CA6DDE2F20BBAE0056A18F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		F8CA6DE22F20BC560056A18F /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8CA6DE12F20BC560056A18F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F8CA6DBB2F20AD760056A18F /* Project object */;
 }
