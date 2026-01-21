@@ -17,16 +17,25 @@ class ViewController: UIViewController {
         theImageView.backgroundColor = .yellow
         
         print(Date().timeIntervalSince1970)
-        let imageAddress = "https://cdn.hk01.com/di/media/images/dw/20220222/572848418750205952062874.jpeg/oo3mQK2GHHCbKZhbPh9fvYVNhYR__ec6pz3p1qc96dY?v=w640"
-        
-        if let imageURL = URL(string: imageAddress){
-            do{
-                let imageData = try Data(contentsOf: imageURL)
-                theImageView.image = UIImage(data: imageData)
-            }catch{
-                print(error.localizedDescription)
+        DispatchQueue.global().async {
+            let imageAddress = "https://cdn.hk01.com/di/media/images/dw/20220222/572848418750205952062874.jpeg/oo3mQK2GHHCbKZhbPh9fvYVNhYR__ec6pz3p1qc96dY?v=w640"
+            
+            if let imageURL = URL(string: imageAddress){
+                do{
+                    let imageData = try Data(contentsOf: imageURL)
+                    DispatchQueue.main.async {
+                        self.theImageView.image = UIImage(data: imageData)
+                        print("imageDidLoad:")
+                        print(Date().timeIntervalSince1970)
+                    }
+                }catch{
+                    print(error.localizedDescription)
+                }
             }
         }
+        
+        
+
         print(Date().timeIntervalSince1970)
         
         
