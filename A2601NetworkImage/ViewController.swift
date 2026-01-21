@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import Alamofire
 
 class ViewController: UIViewController {
     @IBOutlet weak var theImageView: UIImageView!
@@ -54,6 +55,21 @@ class ViewController: UIViewController {
         theImageView.layer.shadowOpacity = 0.6;
         theImageView.layer.shadowColor = UIColor.gray.cgColor
         theImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        
+        
+        
+        AF.request("https://randomuser.me/api/", method: .get)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    print("✅ 成功取得資料：\(value)")
+                case .failure(let error):
+                    print("❌ 錯誤：\(error)")
+                }
+            }
+
+        
+        
     }
 
 }
