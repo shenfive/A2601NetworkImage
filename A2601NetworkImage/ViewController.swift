@@ -8,68 +8,30 @@
 import UIKit
 import SDWebImage
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
     @IBOutlet weak var theImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        theImageView.backgroundColor = .yellow
-        
-        print(Date().timeIntervalSince1970)
-//        DispatchQueue.global().async {
-            let imageAddress = "https://cdn.hk01.com/di/media/images/dw/20220222/572848418750205952062874.jpeg/oo3mQK2GHHCbKZhbPh9fvYVNhYR__ec6pz3p1qc96dY?v=w640"
-        theImageView.sd_setImage(with: URL(string: imageAddress))
-            
-//            if let imageURL = URL(string: imageAddress){
-                
-                
-//                do{
-//                    let imageData = try Data(contentsOf: imageURL)
-//                    DispatchQueue.main.async {
-//                        self.theImageView.image = UIImage(data: imageData)
-//                        print("imageDidLoad:")
-//                        print(Date().timeIntervalSince1970)
-//                    }
-//                }catch{
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-        
-        
 
-        print(Date().timeIntervalSince1970)
         
-  
         
         
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
-        theImageView.clipsToBounds = false
-        theImageView.layer.shadowRadius = 20         //陰影
-        theImageView.layer.shadowOpacity = 0.6;
-        theImageView.layer.shadowColor = UIColor.gray.cgColor
-        theImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
         
-        
-        
-        AF.request("https://randomuser.me/api/", method: .get)
-            .responseJSON { response in
-                switch response.result {
-                case .success(let value):
-                    print("✅ 成功取得資料：\(value)")
-                case .failure(let error):
-                    print("❌ 錯誤：\(error)")
-                }
-            }
 
-        
-        
+        APIService.share.queryRandomUserAlamofire { data, error in
+            print(data)
+            print(data?["results"][0]["picture"]["large"])
+            let imageAddress = data?["results"][0]["picture"]["large"].stringValue ?? ""
+            self.theImageView.sd_setImage(with: URL(string: imageAddress))
+        }
+    
     }
 
 }
