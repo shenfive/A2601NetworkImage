@@ -25,11 +25,17 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
 
-        APIService.share.queryRandomUserAlamofire { data, error in
-            print(data)
-            print(data?["results"][0]["picture"]["large"])
-            let imageAddress = data?["results"][0]["picture"]["large"].stringValue ?? ""
-            self.theImageView.sd_setImage(with: URL(string: imageAddress))
+        APIService.share.queryRandomUserAlamofire { [weak self] data, error in
+            if let error{
+                //處理 error
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let data{
+                let imageAddress = data["results"][0]["picture"]["large"].stringValue
+                self?.theImageView.sd_setImage(with: URL(string: imageAddress))
+            }
         }
     
     }
