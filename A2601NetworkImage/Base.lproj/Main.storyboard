@@ -17,21 +17,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iPQ-VQ-7it">
-                                <rect key="frame" x="50" y="279.66666666666669" width="293" height="293.00000000000006"/>
+                                <rect key="frame" x="50" y="194.33333333333337" width="293" height="293"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iPQ-VQ-7it" secondAttribute="height" id="U3C-uQ-pJg"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyE-OG-HR3">
+                                <rect key="frame" x="175.33333333333334" y="527.33333333333337" width="42.333333333333343" height="28.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbd-Op-8ic">
+                                <rect key="frame" x="276" y="715" width="60" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Next"/>
+                                <connections>
+                                    <action selector="nextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vhY-4J-fPH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iPQ-VQ-7it" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fgu-pf-BCB"/>
+                            <constraint firstItem="IyE-OG-HR3" firstAttribute="top" secondItem="iPQ-VQ-7it" secondAttribute="bottom" constant="40" id="9UX-Kf-ERx"/>
+                            <constraint firstItem="iPQ-VQ-7it" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="Fgu-pf-BCB"/>
+                            <constraint firstItem="IyE-OG-HR3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M1L-Wj-ctM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iPQ-VQ-7it" secondAttribute="trailing" constant="50" id="rRM-SD-PKz"/>
                             <constraint firstItem="iPQ-VQ-7it" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="sVF-Dx-52Z"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="IyE-OG-HR3" id="Rax-8t-ekn"/>
                         <outlet property="theImageView" destination="iPQ-VQ-7it" id="dfU-kE-edv"/>
                     </connections>
                 </viewController>
